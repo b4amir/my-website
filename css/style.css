@@ -1,0 +1,190 @@
+/********** Template CSS **********/
+:root {
+  --primary: #caac18;
+  --secondary: #1f2124;
+  --light: #F2F2F2;
+  --dark: #25282b;
+}
+
+/* Spinner */
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 99999;
+}
+
+#spinner.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive full height fix */
+@media (max-width: 991.98px) {
+  .sticky-lg-top.vh-100 {
+    height: 100% !important;
+  }
+}
+
+/* Font weights */
+.fw-semi-bold { font-weight: 600; }
+.fw-medium { font-weight: 500; }
+
+/* Square buttons */
+.btn-square, .btn-sm-square, .btn-lg-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.btn-square { width: 40px; height: 40px; }
+.btn-sm-square { width: 30px; height: 30px; }
+.btn-lg-square { width: 50px; height: 50px; }
+
+/* Primary button text */
+.btn.btn-primary { color: #FFFFFF; }
+
+/* Typed cursor */
+.typed-cursor { font-size: 25px; color: var(--light); }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  display: none;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 40px;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 50%;
+  background: var(--light);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  z-index: 11;
+  cursor: pointer;
+}
+
+.back-to-top i {
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+.back-to-top:hover i {
+  color: var(--dark);
+  transform: scale(1.2);
+}
+
+.back-to-top {
+  animation: float 1s infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Titles */
+.title { position: relative; }
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -4px;
+  left: 0;
+  border: 2px solid var(--light);
+  border-radius: 50%;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 15px;
+  background: var(--light);
+  border-radius: 2px;
+}
+
+/* Progress bars */
+.progress { height: 5px; }
+.progress .progress-bar {
+  width: 0;
+  transition: width 2s ease;
+}
+
+/* Services */
+.service-item {
+  padding: 30px;
+  text-align: center;
+  background: var(--secondary);
+  transition: transform 0.3s ease;
+}
+.service-item i {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  color: var(--primary);
+  transition: all 0.5s ease;
+  border-radius: 50%;
+}
+.service-item:hover {
+  transform: translateY(-10px);
+}
+.service-item:hover i {
+  background: var(--primary);
+  color: var(--light);
+}
+
+/* Portfolio */
+.portfolio-item .portfolio-btn {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  font-size: 90px;
+  background: rgba(5, 72, 241, 0.9);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.portfolio-item:hover .portfolio-btn {
+  opacity: 1;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  top: 30px;
+  left: 30px;
+}
+.portfolio-item i {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
+}
+.portfolio-item:hover i { opacity: 1; }
+
+/* Testimonials */
+.testimonial-carousel .owl-dots { margin-top: 25px; text-align: center; }
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  background: var(--light);
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+.testimonial-carousel .owl-dot.active { background: var(--primary); }
